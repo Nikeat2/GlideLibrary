@@ -5,10 +5,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.squareup.picasso.Picasso
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,10 +19,13 @@ class MainActivity : AppCompatActivity() {
         btn.setOnClickListener {
             val url = "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ipwI8jWqfiUQ/v1/-1x-1.jpg"
 
-            Glide.with(this)
+            Picasso.get()
                 .load(url)
+                .placeholder(R.drawable.ic_launcher_background)
+                .error(com.google.android.material.R.drawable.mtrl_ic_error)
                 .into(ivPhoto)
 
-        }
+
         }
     }
+}
