@@ -49,5 +49,8 @@ dependencies {
     implementation(libs.glide)
     annotationProcessor(libs.glide)
 
+    implementation(libs.picasso)
+
+
 }
 
